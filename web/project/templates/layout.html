@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="TTR ATM">
+        <title>PROJECT NAME</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    </head>
+
+    <body>
+        <!-- Top Matter -->
+        <header>
+        </header>
+        <!-- Navigation -->
+        <nav>
+            <section>
+                <div class="menuitem">
+                    <a href="{{ url_for('example.example') }}">Example</a>
+                </div>
+            </section>
+            <section>
+                <div class="menuitem">
+                    <a href="">Menu Item</a>
+                </div>
+            </section>
+        </nav>
+        <!-- Sidebar -->
+        <aside>
+            
+        </aside>
+        <!-- Main Content -->
+        <main>
+            <!-- Flash Messages -->
+            {% for error_message in get_flashed_messages(category_filter=["error"]) %}
+            <div class="alert alert-error">{{ error_message }}</div>
+            {% endfor %}
+
+            {% for success_message in get_flashed_messages(category_filter=["success"]) %}
+            <div class="alert alert-success">{{ success_message }}</div>
+            {% endfor %}
+
+            {% for info_message in get_flashed_messages(category_filter=["info"]) %}
+            <div class="alert alert-info">{{ info_message }}</div>
+            {% endfor %}
+
+            {% for debug_message in get_flashed_messages(category_filter=["debug"]) %}
+            <div class="alert alert-debug">{{ debug_message }}</div>
+            {% endfor %}
+
+            <!-- Blueprint/Child Template -->
+            {% block content %}
+            {% endblock %}
+        </main>
+        <!-- Footer -->
+        <footer>
+            
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{% from "_form_macros.html" import render_field %}
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div>
+    <h1>Example Template Page</h1>
+    <div>
+        <form action="{{ url_for('example.example') }}" method="POST" enctype="multipart/form-data">
+            <dl>
+                {{ render_field(form.some_text, placeholder="Hello Placeholder!") }}
+            </dl>
+            <input type='submit'>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
